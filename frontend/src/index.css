@@ -1,0 +1,129 @@
+/* ENHANCED index.css - Custom cursor and professional styling
+   ========================================== */
+
+/* index.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+ 
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Cursor for Canvas Area */
+.react-flow {
+  cursor: crosshair !important;
+  background: linear-gradient(to bottom, #f0f4f8 0%, #e2e8f0 100%) !important;
+}
+
+.react-flow__node {
+  cursor: move !important;
+}
+
+.react-flow__node:hover {
+  cursor: grab !important;
+}
+
+.react-flow__node:active {
+  cursor: grabbing !important;
+}
+
+.react-flow__edge {
+  cursor: pointer !important;
+}
+
+.react-flow__handle {
+  cursor: crosshair !important;
+  transition: all 0.2s ease;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+}
+
+/* Enhanced handle visibility */
+.react-flow__handle-connecting {
+  background: #ff6b6b !important;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Selection box styling */
+.react-flow__selection {
+  background: rgba(102, 126, 234, 0.1);
+  border: 2px dashed #667eea;
+}
+
+/* Connection line styling */
+.react-flow__connection-path {
+  stroke: #667eea;
+  stroke-width: 3;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #ff6b6b;
+  stroke-width: 3;
+}
+
+/* Controls styling */
+.react-flow__controls {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  transition: all 0.2s;
+}
+
+.react-flow__controls-button:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* MiniMap styling */
+.react-flow__minimap {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Improve input/select visibility */
+input, select, textarea {
+  font-family: inherit;
+  cursor: text !important;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer !important;
+}
