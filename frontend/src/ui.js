@@ -135,11 +135,19 @@ export const PipelineUI = () => {
   // Keyboard shortcuts for delete
   const onKeyDown = useCallback(
     (event) => {
-      // Delete or Backspace key
-      if (event.key === 'Delete' || event.key === 'Backspace') {
+      // Check if user is typing in an input field
+      const isTypingInInput = 
+        event.target.tagName === 'INPUT' || 
+        event.target.tagName === 'TEXTAREA' || 
+        event.target.tagName === 'SELECT' ||
+        event.target.isContentEditable;
+
+      // Only Delete key (not Backspace) and only when NOT typing
+      if (event.key === 'Delete' && !isTypingInInput) {
         event.preventDefault();
         onDelete();
       }
+      
       // Ctrl+Z for undo (placeholder - can implement undo/redo later)
       if (event.ctrlKey && event.key === 'z') {
         console.log('Undo - feature can be added');
@@ -169,7 +177,7 @@ export const PipelineUI = () => {
         proOptions={proOptions}
         snapGrid={[gridSize, gridSize]}
         connectionLineType='smoothstep'
-        deleteKeyCode={['Backspace', 'Delete']}
+        deleteKeyCode={['Delete']}
         multiSelectionKeyCode='Shift'
         selectNodesOnDrag={false}
         defaultEdgeOptions={{
@@ -229,10 +237,13 @@ export const PipelineUI = () => {
             ⌨️ Keyboard Shortcuts
           </div>
           <div style={{ lineHeight: '1.8', color: '#555' }}>
-            <div><strong>Delete/Backspace:</strong> Delete selected</div>
+            <div><strong>Delete Key:</strong> Delete selected</div>
             <div><strong>Click:</strong> Select node/edge</div>
             <div><strong>Shift + Click:</strong> Multi-select</div>
             <div><strong>Drag:</strong> Move nodes</div>
+            <div style={{ marginTop: '8px', fontSize: '11px', color: '#999' }}>
+              
+            </div>
           </div>
         </Panel>
 
