@@ -1,6 +1,3 @@
-// Updated toolbar.js with new nodes
-// ==========================================
-
 import { DraggableNode } from './draggableNode';
 
 export const PipelineToolbar = () => {

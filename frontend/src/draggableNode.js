@@ -1,6 +1,4 @@
-// draggableNode.js
-
-export const DraggableNode = ({ type, label }) => {
+ export const DraggableNode = ({ type, label }) => {
     const onDragStart = (event, nodeType) => {
       const appData = { nodeType }
       event.target.style.cursor = 'grabbing';

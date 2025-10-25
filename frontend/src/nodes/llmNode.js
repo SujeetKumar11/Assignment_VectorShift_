@@ -1,6 +1,3 @@
-// FILE: nodes/llmNode.js
-// ==========================================
-
 import { Handle, Position } from 'reactflow';
 
 export const LLMNode = ({ id, data }) => {

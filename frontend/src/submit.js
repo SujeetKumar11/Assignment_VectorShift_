@@ -1,6 +1,3 @@
-// PART 4: Updated submit.js with backend integration
-// ==========================================
-
 import { useStore } from './store';
 
 export const SubmitButton = () => {

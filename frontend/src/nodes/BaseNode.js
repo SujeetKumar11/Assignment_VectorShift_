@@ -1,6 +1,3 @@
-// FILE: nodes/BaseNode.js
-// ==========================================
-
 import { useState, useEffect } from 'react';
 import { Handle, Position } from 'reactflow';
 

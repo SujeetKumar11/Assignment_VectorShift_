@@ -1,6 +1,3 @@
-// FILE: nodes/filterNode.js
-// ==========================================
-
 import { BaseNode } from './BaseNode';
 import { Position } from 'reactflow';
 
