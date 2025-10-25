@@ -35,7 +35,7 @@ export const TextNode = ({ id, data }) => {
         width: dimensions.width,
         minHeight: dimensions.height,
         background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-        border: '2px solid #e91e63',
+        border: '2px solid #ca5179ff',
         borderRadius: '12px',
         padding: '12px',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',

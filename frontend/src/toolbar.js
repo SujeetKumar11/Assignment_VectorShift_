@@ -7,7 +7,7 @@ export const PipelineToolbar = () => {
   return (
     <div style={{ 
       padding: '20px',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      background: '#08b1cbcd',
       borderBottom: '2px solid #5a67d8',
     }}>
       <h2 style={{ 
@@ -20,7 +20,7 @@ export const PipelineToolbar = () => {
       <div style={{ 
         display: 'flex', 
         flexWrap: 'wrap', 
-        gap: '12px',
+        gap: '15px',
       }}>
         <DraggableNode type='customInput' label='📥 Input' />
         <DraggableNode type='llm' label='🤖 LLM' />
