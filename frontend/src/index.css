@@ -12,7 +12,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
- 
 
 * {
   box-sizing: border-box;
@@ -36,8 +35,45 @@ code {
   cursor: grabbing !important;
 }
 
+/* Enhanced node selection */
+.react-flow__node.selected {
+  box-shadow: 0 0 0 3px #667eea !important;
+}
+
+/* Better edge visibility and selection */
 .react-flow__edge {
   cursor: pointer !important;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+  transition: all 0.2s;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 4;
+  stroke: #667eea;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #ff4757 !important;
+  stroke-width: 4 !important;
+  animation: dash 0.5s linear infinite;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke-dasharray: 5;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+/* Remove button on edges when selected */
+.react-flow__edge.selected .react-flow__edge-path {
+  filter: drop-shadow(0 0 4px rgba(255, 71, 87, 0.5));
 }
 
 .react-flow__handle {
@@ -79,15 +115,6 @@ code {
   stroke-width: 3;
 }
 
-.react-flow__edge-path {
-  stroke-width: 2;
-}
-
-.react-flow__edge.selected .react-flow__edge-path {
-  stroke: #ff6b6b;
-  stroke-width: 3;
-}
-
 /* Controls styling */
 .react-flow__controls {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -122,4 +149,21 @@ input, select, textarea {
 button {
   font-family: inherit;
   cursor: pointer !important;
+  transition: all 0.2s;
+}
+
+/* Panel animations */
+.react-flow__panel {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
